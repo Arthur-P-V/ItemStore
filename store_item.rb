@@ -10,11 +10,11 @@ class Spoon
   attr_reader :size, :color, :price, :use
   attr_writer :size, :color, :price, :use
 
-  def initialize(input_size, input_color, input_price, input_use)
-    @size = input_size
-    @color = input_color
-    @price = input_price
-    @use = input_use
+  def initialize(input_options)
+    @size = input_options[:size]
+    @color = input_options[:color]
+    @price = input_options[:price]
+    @use = input_options[:use]
   end
 
   def description
@@ -22,11 +22,11 @@ class Spoon
   end
 end
 
-spoon1 = Spoon.new("small", "silver", 5, "playing spoons")
+spoon1 = Spoon.new({ size: "small", color: "silver", price: 5, use: "playing spoons" })
 spoon1.description
-spoon2 = Spoon.new("medium", "gold", 15, "eating soup or cereal")
+spoon2 = Spoon.new({ size: "medium", colore: "gold", price: 15, use: "eating soup or cereal" })
 spoon2.description
-spoon3 = Spoon.new("giant", "platinum", 30, "digging holes")
+spoon3 = Spoon.new({ size: "giant", color: "platinum", price: 30, use: "digging holes" })
 spoon3.description
 spoon1.size = "miniscule"
 spoon1.description
