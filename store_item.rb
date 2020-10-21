@@ -33,3 +33,20 @@ spoon1.description
 spoon3.price = 500
 spoon3.use = "nothing. This is a versace spoon, don't buy it."
 spoon3.description
+
+class Food < Spoon
+  attr_accessor :shelf_life
+
+  def initialize(input_options)
+    super
+    @shelf_life = input_options[:shelf_life]
+  end
+
+  def description
+    super
+    puts "This product has a shelf life of #{shelf_life}"
+  end
+end
+
+apple = Food.new({ size: "medium", color: "red", price: 2.00, use: "eating", shelf_life: "1 week" })
+apple.description
