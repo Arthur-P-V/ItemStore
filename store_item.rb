@@ -43,7 +43,7 @@ class Food < Spoon
   end
 
   def description
-    super
+    puts "This is a #{size} #{color} apple for #{price} dollars that is best used for #{use}"
     puts "This product has a shelf life of #{shelf_life}"
   end
 end
