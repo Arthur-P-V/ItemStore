@@ -8,12 +8,12 @@ while true
   if word.downcase == "q"
     break
   else
-    response = HTTP.get("https://api.wordnik.com/v4/word.json/#{word.downcase}/definitions?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=o1tp029o4artgjis1rok72b3rxsv17su5kxnpee3fu4egy2ma")
+    response = HTTP.get("https://api.wordnik.com/v4/word.json/#{word.downcase}/definitions?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=")
 
-    proresponse = HTTP.get("https://api.wordnik.com/v4/word.json/#{word.downcase}/pronunciations?useCanonical=false&limit=50&api_key=o1tp029o4artgjis1rok72b3rxsv17su5kxnpee3fu4egy2ma")
+    proresponse = HTTP.get("https://api.wordnik.com/v4/word.json/#{word.downcase}/pronunciations?useCanonical=false&limit=50&api_key=")
     word_info = response.parse
 
-    response2 = HTTP.get("https://api.wordnik.com/v4/word.json/#{word.downcase}/audio?useCanonical=false&limit=50&api_key=o1tp029o4artgjis1rok72b3rxsv17su5kxnpee3fu4egy2ma")
+    response2 = HTTP.get("https://api.wordnik.com/v4/word.json/#{word.downcase}/audio?useCanonical=false&limit=50&api_key=")
     #definition needs to be a loop to iterate and find a nonempty "text" tag
 
     audio = response2.parse
